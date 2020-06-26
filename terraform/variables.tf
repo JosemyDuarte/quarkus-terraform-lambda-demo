@@ -21,7 +21,7 @@ variable "lambda_runtime" {
 }
 
 variable "api_path" {
-  default = "helloworld"
+  default = "quarkushelloworld"
 }
 
 variable "hello_world_http_method" {
