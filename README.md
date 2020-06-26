@@ -1,4 +1,4 @@
-## PoC of Quarkus with AWS Lambdas configure through Terraform
+## PoC of Quarkus with AWS Lambdas configured through Terraform
 
 ### Requirements
 
