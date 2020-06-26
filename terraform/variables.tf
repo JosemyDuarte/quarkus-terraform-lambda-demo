@@ -12,6 +12,10 @@ variable "lambda_function_handler" {
   default = "io.quarkus.amazon.lambda.runtime.QuarkusStreamHandler"
 }
 
+variable "lambda_function_name" {
+  default = "QuarkusHelloWorld"
+}
+
 variable "lambda_runtime" {
   default = "java11"
 }

@@ -1,5 +1,5 @@
 resource "aws_lambda_function" "hello_world_function" {
-  function_name = "hello_world_function"
+  function_name = var.lambda_function_name
   filename = var.lambda_payload_filename
 
   role = aws_iam_role.lambda_apigateway_iam_role.arn
