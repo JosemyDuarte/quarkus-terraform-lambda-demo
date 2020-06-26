@@ -15,3 +15,9 @@ After that, a `zip` with our code should be in `target` folder. Let's execute `t
 
 DONE. Now you can try your lambda just executing the last line of the terraform output, it should be something like this: 
 `curl -H 'Content-Type: application/json' -X POST -d '{"name": "Josemy", "greeting":"Hello"}' https://[ACCOUNT_ID].execute-api.[REGION].amazonaws.com/beta/helloworld`
+
+## Disclaimer
+
+Please note: I'm not responsible for any costs incurred within your AWS account :-)
+
+Same code that the one in [plain java](https://github.com/JosemyDuarte/poc-plain-java-lambda-terraform). I will try a benchmark against that repo.
