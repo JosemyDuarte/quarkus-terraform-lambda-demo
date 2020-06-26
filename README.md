@@ -9,9 +9,10 @@
 
 ## How to try it?
 
-First create a package: `mvn clean package`
+Just execute:
 
-After that, a `zip` with our code should be in `target` folder. Let's execute `terraform init` and `terraform apply` to upload our code to AWS.
+* `cd terraform && terraform init && cd ..` (First time only)
+* `sh build_and_deploy.sh`
 
 DONE. Now you can try your lambda just executing the last line of the terraform output, it should be something like this: 
 `curl -H 'Content-Type: application/json' -X POST -d '{"name": "Josemy", "greeting":"Hello"}' https://[ACCOUNT_ID].execute-api.[REGION].amazonaws.com/beta/helloworld`
