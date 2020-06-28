@@ -13,7 +13,7 @@ variable "lambda_function_handler" {
 }
 
 variable "lambda_function_name" {
-  default = "QuarkusHelloWorld"
+  default = "QuarkusGameScore"
 }
 
 variable "lambda_runtime" {
@@ -21,7 +21,7 @@ variable "lambda_runtime" {
 }
 
 variable "api_path" {
-  default = "quarkushelloworld"
+  default = "quarkusgame"
 }
 
 variable "hello_world_http_method" {

@@ -6,6 +6,8 @@ resource "aws_lambda_function" "hello_world_function" {
   handler = var.lambda_function_handler
   source_code_hash = filebase64sha256(var.lambda_payload_filename)
   runtime = var.lambda_runtime
+  memory_size = 200
+  timeout = 50
 
   environment {
     variables = {

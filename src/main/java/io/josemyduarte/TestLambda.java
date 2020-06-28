@@ -5,16 +5,19 @@ import javax.inject.Named;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import io.josemyduarte.service.GameScoreRepository;
+import io.josemyduarte.view.DynamoGameScore;
+import io.josemyduarte.view.GameScoreRequest;
 
 @Named("test")
-public class TestLambda implements RequestHandler<InputObject, OutputObject> {
-    
+public class TestLambda implements RequestHandler<GameScoreRequest, DynamoGameScore> {
+
     @Inject
-    ProcessingService service;
+    GameScoreRepository repository;
 
     @Override
-    public OutputObject handleRequest(final InputObject input, final Context context) {
+    public DynamoGameScore handleRequest(final GameScoreRequest input, final Context context) {
         System.out.println(input);
-        return service.process(input).setRequestId(context.getAwsRequestId());
+        return repository.get(input.getUserId());
     }
 }

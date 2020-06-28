@@ -1,5 +1,5 @@
 resource "aws_iam_role" "lambda_apigateway_iam_role" {
-  name = "lambda_apigateway_iam_role"
+  name = "lambda_apigateway_iam_role_2"
 
   assume_role_policy = <<POLICY
 {
@@ -8,7 +8,7 @@ resource "aws_iam_role" "lambda_apigateway_iam_role" {
     {
       "Action": "sts:AssumeRole",
       "Principal": {
-        "Service": ["apigateway.amazonaws.com","lambda.amazonaws.com"]
+        "Service": ["apigateway.amazonaws.com","lambda.amazonaws.com", "dynamodb.amazonaws.com"]
       },
       "Effect": "Allow",
       "Sid": ""
@@ -26,6 +26,20 @@ resource "aws_iam_role_policy" "lambda_policy" {
 {
   "Version": "2012-10-17",
   "Statement": [
+    {
+      "Sid": "ReadWriteTable",
+      "Effect": "Allow",
+      "Action": [
+          "dynamodb:BatchGetItem",
+          "dynamodb:GetItem",
+          "dynamodb:Query",
+          "dynamodb:Scan",
+          "dynamodb:BatchWriteItem",
+          "dynamodb:PutItem",
+          "dynamodb:UpdateItem"
+      ],
+      "Resource": "*"
+    },
     {
       "Effect": "Allow",
       "Action": [
