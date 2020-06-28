@@ -15,7 +15,7 @@ Just execute:
 * `sh build_and_deploy.sh`
 
 DONE. Now you can try your lambda just executing the last line of the terraform output, it should be something like this: 
-`curl -H 'Content-Type: application/json' -X POST -d '{"name": "Josemy", "greeting":"Hello"}' https://[ACCOUNT_ID].execute-api.[REGION].amazonaws.com/beta/helloworld`
+`curl -H 'Content-Type: application/json' -X POST -d '{"userId": "SomeUserId"}' https://[ACCOUNT_ID].execute-api.[REGION].amazonaws.com/beta/helloworld`
 
 ## Disclaimer
 
